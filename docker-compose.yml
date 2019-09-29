@@ -10,5 +10,5 @@ services:
       DEBUG: teochew-dictionary-backend:*
     ports:
       - 3000:3000
-    command: npm start
+    command: npm run devstart_dock
     

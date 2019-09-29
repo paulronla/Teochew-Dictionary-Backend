@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+	"devstart_win": "nodemon ./bin/www",
+	"devstart_dock": "nodemon -L ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,5 +14,8 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }
