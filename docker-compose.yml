@@ -9,6 +9,6 @@ services:
       NODE_ENV: production
       DEBUG: teochew-dictionary-backend:*
     ports:
-      - 3000:3000
+      - "3000:3000"
     command: npm run devstart_dock
     
