@@ -66,6 +66,10 @@ function audioExists(chaoyin, teochewAudioDict) {
 }
 
 function genToneSandhi(chaoyinArr, teochewAudioDict) {
+    if (!audioExists(chaoyinArr[chaoyinArr.length - 1], teochewAudioDict)) {
+        return '';
+    }
+
     //last character in utterance doesn't change tone
     for (let idx = 0; idx < chaoyinArr.length - 1; idx++) {
         const newToneNum = TONE_SANDHI[chaoyinArr[idx].slice(-1)];
@@ -133,4 +137,13 @@ function chaoyinIfExists(chaoyin, teochewAudioDict) {
     return '';
 }
 
-module.exports = {genToneSandhi: genToneSandhi};
+function genToneSandhiSingle(chaoyin, teochewAudioDict) {
+    return genToneSandhi([chaoyin, 'a1'], teochewAudioDict)
+            .slice(0, -3);
+            //doesn't tone change the last word -- a1 is a workaround
+}
+
+module.exports = {
+    genToneSandhi: genToneSandhi,
+    genToneSandhiSingle: genToneSandhiSingle
+};
