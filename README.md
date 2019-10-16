@@ -1,5 +1,6 @@
 # Teochew-Dictionary-Backend
-Web API for Teochew Pop-up Dictionary and web app Teochew dictionary
+Web API for [Teochew Pop-up Dictionary](https://github.com/paulronla/Teochew-Pop-up-Dictionary) 
+and web app Teochew dictionary
 
 This backend uses the Express framework and runs in a Docker container 
 hosted on Google Cloud Run.
