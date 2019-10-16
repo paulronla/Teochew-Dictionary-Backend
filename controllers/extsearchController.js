@@ -27,15 +27,14 @@ function genPartialPinyinChaoyinDict(simpChars, tradChars) {
     }
 
     for (let i = 0; i < validSimpChars.length; i++) {
-        const char = validSimpChars[i];
+        const hasSimpChar = pinyinChaoyinDict.hasOwnProperty(validSimpChars[i]);
 
-        if (pinyinChaoyinDict.hasOwnProperty(char)
+        if (hasSimpChar
                 || pinyinChaoyinDict.hasOwnProperty(validTradChars[i])) {
+            const char = hasSimpChar ? validSimpChars[i] : validTradChars[i]; 
             
             if (!partialPinyinChaoyinDict.hasOwnProperty(char)) {
-                
-                partialPinyinChaoyinDict[char] = pinyinChaoyinDict[char]
-                        || pinyinChaoyinDict[validTradChars[i]];
+                partialPinyinChaoyinDict[char] = pinyinChaoyinDict[char];
             }
         }
     }
